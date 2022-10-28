@@ -36,7 +36,7 @@ social:
     link: https://github.com/NelsonCheung-cn
   - icon: blog
     icon_pack: fas
-    label: Visit my blog
+    label: Visit Blog
     link: https://blog.nelson-cheung.cn
   # Link to a PDF of your resume/CV from the About widget.
   # To enable, copy your resume/CV to `static/uploads/resume.pdf`
