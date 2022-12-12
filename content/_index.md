@@ -9,7 +9,9 @@ sections:
       # Choose a user profile to display (a folder name within `content/authors/`)
       username: admin
       text: |-
-        I'm **Nelson Cheung**, a programmer until the end of the world.
+       
+        **Freedom and Romance Last Forever**<br>
+         **唯自由与浪漫不可辜负**
         {style="font-size: 1.2rem; background: #FFB76B; background: linear-gradient(to right, #FFB76B 0%, #FFA73D 30%, #FF7C00 60%, #FF7F04 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;"}
     design:
       background:
