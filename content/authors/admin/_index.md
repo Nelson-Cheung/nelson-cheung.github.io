@@ -33,7 +33,7 @@ social:
   - icon: github
     icon_pack: fab
     label: Visit Github
-    link: https://github.com/NelsonCheung-cn
+    link: https://github.com/nelson-cheung
   - icon: blog
     icon_pack: fas
     label: Visit Blog
