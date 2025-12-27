@@ -6,14 +6,21 @@
 
 确保你的代码已经推送到 GitHub 仓库，仓库名应该是 `nelson-cheung.github.io`（如果使用用户/组织页面）或任意名称（如果使用项目页面）。
 
-### 2. 配置 GitHub Pages
+### 2. 配置 GitHub Pages（重要！）
+
+**必须先手动启用 GitHub Pages，然后 workflow 才能工作：**
 
 1. 进入你的 GitHub 仓库
 2. 点击 **Settings**（设置）
 3. 在左侧菜单中找到 **Pages**
-4. 在 **Source** 部分，选择：
-   - **Source**: `GitHub Actions`（使用我们创建的 workflow）
-   - 或者选择 **Source**: `Deploy from a branch`，然后选择 `gh-pages` 分支和 `/ (root)` 目录
+4. 在 **Build and deployment** 部分：
+   - **Source**: 选择 **GitHub Actions**（重要：必须选择这个选项）
+5. 点击 **Save** 保存设置
+
+**注意：**
+- 如果看到 "Your site is ready to be published" 的提示，说明 Pages 还没有启用
+- 必须选择 **GitHub Actions** 作为源，而不是 branch 部署
+- 如果仓库名不是 `nelson-cheung.github.io`，网站地址会是 `https://nelson-cheung.github.io/仓库名/`
 
 ### 3. 使用 GitHub Actions（推荐）
 
