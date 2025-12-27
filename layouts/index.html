@@ -1,0 +1,60 @@
+{{ define "main" }}
+{{ $author := site.GetPage (printf "/authors/%s" (.Params.username | default "admin")) }}
+{{ $person := dict }}
+{{ $avatar := false }}
+{{ if $author }}
+  {{ $person = $author.Params }}
+  {{ $avatar = ($author.Resources.ByType "image").GetMatch "*avatar*" }}
+{{ end }}
+
+<div class="homepage">
+  {{ if .Params.background_image }}
+    {{ $bg := resources.Get (printf "media/%s" .Params.background_image) }}
+    {{ if $bg }}
+      <div class="background-image" style="background-image: url('{{ $bg.RelPermalink }}');"></div>
+    {{ end }}
+  {{ end }}
+  
+  <div class="profile-container">
+    {{ if $avatar }}
+      <div class="avatar-wrapper">
+        {{ $avatar_image := $avatar.Fill "180x180 Center" }}
+        <img class="avatar" src="{{ $avatar_image.RelPermalink }}" alt="{{ if $author }}{{ $author.Title }}{{ else }}{{ site.Title }}{{ end }}" width="180" height="180">
+      </div>
+    {{ end }}
+    
+    <h1 class="name">{{ if $author }}{{ $author.Title }}{{ else }}{{ site.Title }}{{ end }}</h1>
+    
+    {{ if $person.social }}
+    <ul class="social-icons">
+      {{ range $person.social }}
+        {{ $pack := or .icon_pack "fas" }}
+        {{ $icon := .icon }}
+        {{ $iconClass := "" }}
+        {{ if eq $icon "blog" }}
+          {{ $iconClass = "fas fa-rss" }}
+        {{ else if eq $pack "fab" }}
+          {{ $iconClass = printf "fab fa-%s" $icon }}
+        {{ else }}
+          {{ $iconClass = printf "fas fa-%s" $icon }}
+        {{ end }}
+        <li>
+          <a href="{{ .link | safeURL }}" 
+             {{ if or (hasPrefix .link "http") (hasPrefix .link "mailto") }}target="_blank" rel="noopener"{{ end }}
+             aria-label="{{ .label | default .icon }}">
+            <i class="{{ $iconClass }}"></i>
+          </a>
+        </li>
+      {{ end }}
+    </ul>
+    {{ end }}
+    
+    {{ if .Content }}
+      <div class="quote">
+        {{ .Content }}
+      </div>
+    {{ end }}
+  </div>
+</div>
+{{ end }}
+

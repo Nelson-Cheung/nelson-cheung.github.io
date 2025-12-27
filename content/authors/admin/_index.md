@@ -11,7 +11,7 @@ role: ''
 
 # Status emoji
 status:
-  icon: 🥑
+  icon: 😁
 
 # Organizations/Affiliations
 #organizations:
@@ -34,10 +34,10 @@ social:
     icon_pack: fab
     label: Visit Github
     link: https://github.com/nelson-cheung
-  - icon: blog
-    icon_pack: fas
-    label: Visit Blog
-    link: https://www.yuque.com/nelsoncheung
+  # - icon: blog
+  #   icon_pack: fas
+  #   label: Visit Blog
+  #   link: https://www.yuque.com/nelsoncheung
   # Link to a PDF of your resume/CV from the About widget.
   # To enable, copy your resume/CV to `static/uploads/resume.pdf`
   - icon: file-pdf
